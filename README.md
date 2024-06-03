@@ -6,10 +6,10 @@
 El presente informe documenta el proceso de construcción y evaluación de un modelo de clasificación de texto utilizando SVM y TfidfVectorizer para establecer si una negociación de venta se lleva a cabo o no y otro modelo de clasificación de texto haciendo fine-tuning de un modelo pre-entrenado de Bert en español para clasificar el tipo de negocio que se está llevando a cabo en la conversacion
 
 ### 2. Descripción del Problema:
-El problema consiste en clasificar conversaciones de ventas en función de su contenido para identificar patrones que puedan predecir la probabilidad de venta.
+El problema consiste en clasificar conversaciones de ventas en función de su contenido para identificar patrones que puedan predecir la probabilidad de que la negociación halla terminado en una venta exitosa o no y así mismo establecer según la conversación qué tipo de negociación se esta llevando a cabo.
 
 ### 3. Descripción del Conjunto de Datos:
-El conjunto de datos contiene conversaciones de ventas etiquetadas con la variable objetivo "Venta". El corpus consiste en X conversaciones y Y características.
+El conjunto de datos contiene conversaciones de ventas de productos fisicos etiquetadas con la variable objetivo "Venta" -- True o --False y tambien con la variable objetivo "Categoria" -- venta_de_producto_fisico  .
 
 ### 4. Preprocesamiento de Datos:
 Se realizó un preprocesamiento que incluyó limpieza de texto, tokenización y vectorización utilizando TfidfVectorizer. Además, se balancearon las clases para evitar sesgos en el modelo.
