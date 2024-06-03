@@ -9,7 +9,7 @@ El presente informe documenta el proceso de construcción y evaluación de un mo
 El problema consiste en clasificar conversaciones de ventas en función de su contenido para identificar patrones que puedan predecir la probabilidad de que la negociación halla terminado en una venta exitosa o no y así mismo establecer según la conversación qué tipo de negociación se esta llevando a cabo.
 
 ### 3. Descripción del Conjunto de Datos:
-El conjunto de datos contiene conversaciones de ventas de productos fisicos etiquetadas con la variable objetivo "Venta" -- True o --False y tambien con la variable objetivo "Categoria" -- venta_de_producto_fisico  .
+El conjunto de datos contiene conversaciones de ventas de productos fisicos electrónicos las cuales fueron generadas con ChatGpt para productos diferentes entre un agente y un cliente , etiquetadas con la variable objetivo "Venta" -- True o --False y tambien con la variable objetivo "Categoria" -- venta_de_producto_fisico  .
 
 ### 4. Preprocesamiento de Datos:
 Se realizó un preprocesamiento que incluyó limpieza de texto, tokenización y vectorización utilizando TfidfVectorizer. Además, se balancearon las clases para evitar sesgos en el modelo.
