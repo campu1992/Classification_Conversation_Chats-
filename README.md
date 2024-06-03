@@ -12,16 +12,16 @@ El problema consiste en clasificar conversaciones de ventas en función de su co
 El conjunto de datos contiene conversaciones de ventas de productos fisicos electrónicos las cuales fueron generadas con ChatGpt para productos diferentes entre un agente y un cliente , etiquetadas con la variable objetivo "Venta" -- True o --False y tambien con la variable objetivo "Categoria" -- venta_de_producto_fisico  .
 
 ### 4. Preprocesamiento de Datos:
-Se realizó un preprocesamiento que incluyó limpieza de texto, tokenización y vectorización utilizando TfidfVectorizer. Además, se balancearon las clases para evitar sesgos en el modelo.
+Se realizó un preprocesamiento que incluyó limpieza de texto, tokenización, lemmatización y vectorización utilizando TfidfVectorizer. Además, se balancearon las clases haciendo un submuestreo para evitar sesgos en el modelo.
 
 ### 5. Construcción del Modelo:
-Se construyó un pipeline que incluye TfidfVectorizer para la extracción de características y un clasificador SVM para la clasificación.
+Se construyó un pipeline que incluye TfidfVectorizer para la extracción de características y un clasificador SVM para la clasificación para la clasificación de negocio exitoso o no exitoso, Para clasificar el tipo de negocio, debido a la falta de datos de cada categoria para entrenar un modelo desde cero se recurrió a usar un modelo pre-entrenado basado en transformers como lo es Bert en español, se hizo un fine-tuning entrenandolo con los datos de la categoria venta_de_producto_fisico entrenando las capas mas superficiales para poder mantener los datos originales del modelo pre-entrenado y que no hubiese un sobreajuste con una sola de las categorias.
 
 ### 6. Hiperparámetros y Validación:
 Se utilizó GridSearchCV para la búsqueda de hiperparámetros y validación cruzada de 5 pliegues para evaluar el rendimiento del modelo.
 
 ### 7. Evaluación del Modelo:
-El modelo entrenado alcanzó una precisión del 95% en el conjunto de prueba. Se presenta la matriz de confusión y otras métricas de evaluación.
+El modelo entrenado alcanzó una precisión del 95% en el conjunto de prueba. Se presenta la matriz de confusión y otras métricas de evaluación como accuracy, F1 Score , Recall.
 
 ### 8. Conclusiones y Recomendaciones:
 El modelo demostró un buen rendimiento en la clasificación de conversaciones de ventas. Sin embargo, se sugiere investigar técnicas adicionales para mejorar la generalización y la robustez del modelo.
