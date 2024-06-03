@@ -18,11 +18,28 @@ Se realizó un preprocesamiento que incluyó limpieza de texto, tokenización, l
 Se construyó un pipeline que incluye TfidfVectorizer para la extracción de características y un clasificador SVM para la clasificación para la clasificación de negocio exitoso o no exitoso, Para clasificar el tipo de negocio, debido a la falta de datos de cada categoria para entrenar un modelo desde cero se recurrió a usar un modelo pre-entrenado basado en transformers como lo es Bert en español, se hizo un fine-tuning entrenandolo con los datos de la categoria venta_de_producto_fisico entrenando las capas mas superficiales para poder mantener los datos originales del modelo pre-entrenado y que no hubiese un sobreajuste con una sola de las categorias.
 
 ### 6. Hiperparámetros y Validación:
-Se utilizó GridSearchCV para la búsqueda de hiperparámetros y validación cruzada de 5 pliegues para evaluar el rendimiento del modelo.
+Se utilizó GridSearchCV para la búsqueda de hiperparámetros y validación cruzada de 5 pliegues para evaluar el rendimiento del modelo , ya que, se observó un recall de 1 pero al momento de hacer la validación cruzada se obtuvo un promedio de 0.95, lo cual podemos inferir que funciona ante diferentes escenarios pero necesita una mayor cantidad de datos para entrenamiento y evitar sobreajustes.
 
 ### 7. Evaluación del Modelo:
 El modelo entrenado alcanzó una precisión del 95% en el conjunto de prueba. Se presenta la matriz de confusión y otras métricas de evaluación como accuracy, F1 Score , Recall.
 
 ### 8. Conclusiones y Recomendaciones:
-El modelo demostró un buen rendimiento en la clasificación de conversaciones de ventas. Sin embargo, se sugiere investigar técnicas adicionales para mejorar la generalización y la robustez del modelo.
+El modelo demostró un buen rendimiento en la clasificación de conversaciones de ventas. Sin embargo, se debe aumentar la cantidad de datos de entrenamiento para ambos modelos y así mejorar la generalización y la robustez de los modelos.
+
+### 9. Librerias 
+-pandas
+-matplotlib
+-seaborn
+-numpy
+-nltk
+-sklearn
+-tensorflow
+-transformers
+-torch
+-re
+-string
+-joblib
+
+### 10. Caso de uso
+Se entrega un archivo ejecutable el cual da la opcion de introducir el texto a clasificar o se presenta la opcion de subir un csv con las columnas Producto y Conversación.
 
